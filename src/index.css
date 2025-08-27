@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LuxeLane Design System - Luxury E-commerce Palette */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 99%;
+    --foreground: 240 15% 9%;
+
+    /* Luxury Navy - Primary Brand Color */
+    --primary: 240 25% 15%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 240 20% 25%;
+    --primary-lighter: 240 15% 35%;
+
+    /* Rich Purple - Secondary Brand Color */
+    --secondary: 280 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 280 25% 30%;
+
+    /* Luxury Gold - Accent Color */
+    --accent: 45 90% 55%;
+    --accent-foreground: 240 25% 15%;
+    --accent-light: 45 85% 65%;
+    --accent-dark: 45 95% 45%;
+
+    /* Elegant Grays */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 8% 46%;
+    --muted-dark: 240 8% 86%;
+
+    /* Card & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 9%;
+    --card-hover: 240 10% 98%;
+
+    /* Interactive Elements */
+    --border: 240 8% 92%;
+    --input: 240 8% 95%;
+    --ring: 45 90% 55%;
+
+    /* System Colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 140 65% 45%;
+    --success-foreground: 0 0% 98%;
+    --warning: 35 85% 55%;
+    --warning-foreground: 240 25% 15%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 9%;
+
+    /* Luxury Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-dark)) 0%, hsl(var(--accent-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--secondary)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+
+    /* Elegant Shadows */
+    --shadow-luxury: 0 10px 40px -10px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.08);
+    --shadow-accent: 0 8px 30px -8px hsl(var(--accent) / 0.3);
+    --shadow-hover: 0 15px 50px -10px hsl(var(--primary) / 0.15);
+
+    /* Animation Variables */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark theme maintains luxury feel */
+    --background: 240 20% 8%;
+    --foreground: 0 0% 95%;
+
+    --primary: 240 15% 85%;
+    --primary-foreground: 240 25% 15%;
+    --primary-light: 240 20% 75%;
+    --primary-lighter: 240 15% 65%;
+
+    --secondary: 280 25% 70%;
+    --secondary-foreground: 280 30% 20%;
+    --secondary-light: 280 20% 80%;
+
+    --accent: 45 85% 60%;
+    --accent-foreground: 240 25% 15%;
+    --accent-light: 45 80% 70%;
+    --accent-dark: 45 90% 50%;
+
+    --muted: 240 15% 15%;
+    --muted-foreground: 240 8% 70%;
+    --muted-dark: 240 12% 12%;
+
+    --card: 240 18% 12%;
+    --card-foreground: 0 0% 95%;
+    --card-hover: 240 15% 15%;
+
+    --border: 240 12% 20%;
+    --input: 240 15% 18%;
+    --ring: 45 85% 60%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 95%;
+    --success: 140 60% 50%;
+    --success-foreground: 0 0% 95%;
+    --warning: 35 80% 60%;
+    --warning-foreground: 240 25% 15%;
+
+    --popover: 240 18% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-dark)) 0%, hsl(var(--accent-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--secondary)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+
+    --shadow-luxury: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.2);
+    --shadow-accent: 0 8px 30px -8px hsl(var(--accent) / 0.2);
+    --shadow-hover: 0 15px 50px -10px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  }
+
+  /* Luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/40;
+  }
+}
+
+@layer components {
+  /* Luxury Button Variants */
+  .btn-luxury {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground;
+    @apply px-8 py-3 rounded-xl font-semibold tracking-wide;
+    @apply shadow-luxury hover:shadow-hover;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:scale-105 hover:-translate-y-0.5;
+  }
+
+  .btn-accent {
+    background: var(--gradient-accent);
+    @apply text-accent-foreground px-6 py-2.5 rounded-lg font-medium;
+    @apply shadow-accent hover:shadow-lg;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:scale-105;
+  }
+
+  .btn-ghost-luxury {
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply px-6 py-2.5 rounded-lg font-medium;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Card Variants */
+  .card-luxury {
+    background: var(--gradient-card);
+    @apply rounded-2xl p-6 shadow-card;
+    @apply border border-border/50;
+    @apply hover:shadow-hover;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-product {
+    @apply bg-card rounded-xl overflow-hidden;
+    @apply shadow-card hover:shadow-hover;
+    @apply border border-border/30;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:scale-[1.02] hover:-translate-y-1;
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-accent-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero Section */
+  .hero-bg {
+    background: var(--gradient-hero);
+  }
+
+  /* Loading Animation */
+  .loading-pulse {
+    @apply animate-pulse bg-muted rounded;
+  }
+}
